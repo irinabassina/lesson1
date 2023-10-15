@@ -6,52 +6,83 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Product product1 = new Product();
+        // Product product1 = new Product();
         //product1.name = "Продукт #1";
        // product1.brand = "Производитель #1";
         //product1.price = -10;
 
-        System.out.println(product1.displayInfo());
+        // System.out.println(product1.displayInfo());
 
-        Product product2 = new Product();
+        // Product product2 = new Product();
 
-        System.out.println(product2.displayInfo());
+        // System.out.println(product2.displayInfo());
 
-        Product product3 = new Product("Производитель #2", "Продукт #2", 325);
+        // Product product3 = new Product("Производитель #2", "Продукт #2", 325);
 
 
-        System.out.println(product3.displayInfo());
+        // System.out.println(product3.displayInfo());
 
-        Product bottleOfWater = new BottleOfWater("ООО Источник", "Бутылка с водой #1", 200, 1.5);
-        System.out.println(bottleOfWater.displayInfo());
+        // Product bottleOfWater = new BottleOfWater("ООО Источник", "Бутылка с водой #1", 200, 1.5);
+        // System.out.println(bottleOfWater.displayInfo());
 
-        Product bottleOfMilk1 =
-                new BottleOfMilk("ООО Источник", "Бутылка с молоком #1", 220, 1.5, 25);
-        System.out.println(bottleOfMilk1.displayInfo());
+        // Product bottleOfMilk1 =
+        //         new BottleOfMilk("ООО Источник", "Бутылка с молоком #1", 220, 1.5, 25);
+        // System.out.println(bottleOfMilk1.displayInfo());
 
-        Product bottleOfMilk2 =
-                new BottleOfMilk("ООО Источник", "Бутылка с молоком #2", 120, 1.0, 15);
-        System.out.println(bottleOfMilk2.displayInfo());
+        // Product bottleOfMilk2 =
+        //         new BottleOfMilk("ООО Источник", "Бутылка с молоком #2", 120, 1.0, 15);
+        // System.out.println(bottleOfMilk2.displayInfo());
 
-        Product bottleOfMilk3 =
-                new BottleOfMilk("ООО Источник", "Бутылка с молоком #3", 320, 1.0, 15);
-        System.out.println(bottleOfMilk3.displayInfo());
+        // Product bottleOfMilk3 =
+        //         new BottleOfMilk("ООО Источник", "Бутылка с молоком #3", 320, 1.0, 15);
+        // System.out.println(bottleOfMilk3.displayInfo());
+
+        // ArrayList<Product> products = new ArrayList<>();
+        // products.add(bottleOfWater);
+        // products.add(bottleOfMilk1);
+        // products.add(bottleOfMilk2);
+        // products.add(bottleOfMilk3);
+
+
+        Product chocolateBar1 =
+                new ChocolateBar("АО Рахат", "Плитка шоколада #1", 200, 0.2);
+        System.out.println(chocolateBar1.displayInfo());
+
+        Product chocolateBar2 =
+                new ChocolateBar("АО Рахат", "Плитка шоколада #2", 300, 0.2);
+        System.out.println(chocolateBar2.displayInfo());
+
+        Product chocolateBar3 =
+                new ChocolateBar("АО Рахат", "Плитка шоколада #3", 100, 0.1);
+        System.out.println(chocolateBar3.displayInfo());
 
         ArrayList<Product> products = new ArrayList<>();
-        products.add(bottleOfWater);
-        products.add(bottleOfMilk1);
-        products.add(bottleOfMilk2);
-        products.add(bottleOfMilk3);
+        // products.add(bottleOfWater);
+        products.add(chocolateBar1);
+        products.add(chocolateBar2);
+        products.add(chocolateBar3);
+
+
+        // VendingMachine vendingMachine = new VendingMachine(products);
+        // BottleOfMilk bottleOfMilk = vendingMachine.getBottleOfMilk("Бутылка с молоком #2", 0.5);
+        // if (bottleOfMilk == null){
+        //     System.out.println("Такой бутылки с молоком нет в  автомате.");
+        // }
+        // else {
+        //     System.out.println("Вы купили:");
+        //     System.out.println(bottleOfMilk.displayInfo());
+        // }
 
         VendingMachine vendingMachine = new VendingMachine(products);
-        BottleOfMilk bottleOfMilk = vendingMachine.getBottleOfMilk("Бутылка с молоком #2", 0.5);
-        if (bottleOfMilk == null){
-            System.out.println("Такой бутылки с молоком нет в  автомате.");
+        ChocolateBar chocolateBar = vendingMachine.getChocolateBar("Плитка шоколада #2", 0.5);
+        if (chocolateBar == null){
+            System.out.println("Такой шоколадки нет в  автомате.");
         }
         else {
             System.out.println("Вы купили:");
-            System.out.println(bottleOfMilk.displayInfo());
+            System.out.println(chocolateBar.displayInfo());
         }
+
     }
 
 }
